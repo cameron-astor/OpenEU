@@ -26,7 +26,7 @@ namespace BW {
     {
         m_LoadingText.setFont(*sm->m_Fonts->get("assets/gfx/fonts/arial.ttf"));
         m_LoadingText.setString("Loading");
-        m_Text.setPosition(500.f, 500.f);
+        m_Text.setPosition(500.f, 600.f);
 
         m_SceneRoot.attachChild(std::unique_ptr<SpriteNode>(&m_Background));
         m_SceneRoot.attachChild(std::unique_ptr<TextNode>(&m_Text));
