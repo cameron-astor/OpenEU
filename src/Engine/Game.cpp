@@ -20,9 +20,10 @@ namespace BW {
     {
         // initialization procedure
 
-        loadFirstResources();
+        loadFirstResources(); // load resources necessary for loading screen
 
-        m_States = new StateManager(m_Window, m_Textures, m_Fonts);
+        m_States = new StateManager(m_Window, m_Textures, m_Fonts); // create state manager
+        m_States->setState("Loading"); // loading screen (during which resources are loaded)
 
         gameLoop(); // start the game loop
 

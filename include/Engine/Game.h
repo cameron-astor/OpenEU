@@ -64,7 +64,7 @@ class Game
         const sf::String DEFAULT_TITLE;
 
         sf::RenderWindow m_Window; // A window on which to render
-        sf::RenderStates rs;
+        sf::RenderStates rs; // render states for window
 
         FpsCounter counter; // FPS counter for the window
 
@@ -79,6 +79,9 @@ class Game
         void processEvents(); // Processes user input
         void update(); // Updates game logic
         void render(); // Renders graphics to the window
+
+
+        /* MANAGERS */
 
         /* Asset managers */
         TextureManager *m_Textures;

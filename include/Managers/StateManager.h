@@ -8,10 +8,14 @@
 #include <States/MapState.h>
 #include <States/DefaultState.h>
 
-#include <vector>
-#include <map>
-
 namespace BW {
+
+/**
+* Manages storing and switching between the game's states.
+* States are not saved when swapped (i.e. a new instance is created upon switching)
+*
+* @param the window on which to render, various resource managers
+*/
 
 /* TODO
     - use a stack instead of a vector
@@ -29,7 +33,7 @@ class StateManager : public Manager
         GameState* getCurrentState();
 
         /* Sets the current state to a new instance of
-           the requested state. */
+           the requested state. Deletes the previous state. */
         void setState(sf::String state);
 
         // References to resource managers
@@ -39,18 +43,12 @@ class StateManager : public Manager
         // etc
 
     private:
-        // Container of game states
-        std::vector<GameState*> states;
-        // Index of current state
-        unsigned int stateIndex;
+        // Pointer to the current game state
+        GameState *currentState;
 
         // Reference to the render window
         const sf::RenderWindow *m_Window;
 
-        // Default state
-        DefaultState m_Default;
-        // Loading state
-        LoadingState m_LoadingState;
 
 };
 

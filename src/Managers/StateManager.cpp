@@ -4,12 +4,9 @@ namespace BW {
 
     StateManager::StateManager(const sf::RenderWindow& window, TextureManager* tptr, FontManager* fptr):
         m_Textures(tptr), m_Fonts(fptr),
-        states(), stateIndex(0), m_Window(&window), m_Default(),
-        m_LoadingState(window, this)
+        m_Window(&window)
     {
-        // GameState *ptr = &m_Default;
-        GameState* loadingPtr = &m_LoadingState;
-        states.push_back(loadingPtr);
+        currentState = new DefaultState;
     }
 
     StateManager::~StateManager()
@@ -19,12 +16,16 @@ namespace BW {
 
     GameState* StateManager::getCurrentState()
     {
-        return states[stateIndex];
+        return currentState;
     }
 
     void StateManager::setState(sf::String state)
     {
-
+        delete currentState;
+        if (state == "Default")
+            currentState = new DefaultState;
+        else if (state == "Loading")
+            currentState = new LoadingState(*m_Window, this);
     }
 
 }

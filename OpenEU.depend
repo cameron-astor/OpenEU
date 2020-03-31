@@ -472,18 +472,16 @@
 1585351345 c:\users\camer\codeblocks\openeu\include\managers\manager.h
 	<SFML/Graphics.hpp>
 
-1585562550 source:c:\users\camer\codeblocks\openeu\src\managers\statemanager.cpp
+1585641895 source:c:\users\camer\codeblocks\openeu\src\managers\statemanager.cpp
 	"StateManager.h"
 
-1585561590 c:\users\camer\codeblocks\openeu\include\managers\statemanager.h
+1585641918 c:\users\camer\codeblocks\openeu\include\managers\statemanager.h
 	<Managers/Manager.h>
 	<Engine/GameState.h>
 	<States/MenuState.h>
 	<States/LoadingState.h>
 	<States/MapState.h>
 	<States/DefaultState.h>
-	<vector>
-	<map>
 
 1585351273 source:c:\users\camer\codeblocks\openeu\src\managers\assetmanager.cpp
 	"AssetManager.h"
@@ -535,7 +533,7 @@
 1585437444 c:\users\camer\codeblocks\openeu\include\engine\spritenode.h
 	<Engine/SceneNode.h>
 
-1585562892 source:c:\users\camer\codeblocks\openeu\src\states\loadingstate.cpp
+1585564108 source:c:\users\camer\codeblocks\openeu\src\states\loadingstate.cpp
 	"LoadingState.h"
 	<Managers/StateManager.h>
 
