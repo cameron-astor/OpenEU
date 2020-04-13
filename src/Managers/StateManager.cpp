@@ -26,6 +26,8 @@ namespace BW {
             currentState = new DefaultState;
         else if (state == "Loading")
             currentState = new LoadingState(*m_Window, this);
+        else if (state == "Menu")
+            currentState = new MenuState(*m_Window, this);
     }
 
 }

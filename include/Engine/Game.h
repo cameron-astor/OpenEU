@@ -76,7 +76,7 @@ class Game
         /* Game loop components */
         sf::Time timePerUpdateTick;
 
-        void processEvents(); // Processes user input
+        void processEvents(); // Handles window/OS events, user input
         void update(); // Updates game logic
         void render(); // Renders graphics to the window
 

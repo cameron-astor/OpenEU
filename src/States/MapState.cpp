@@ -2,7 +2,7 @@
 
 namespace BW {
 
-    MapState::MapState(sf::RenderWindow& window)
+    MapState::MapState(sf::RenderWindow& window, StateManager *sm)
     {
         //ctor
     }

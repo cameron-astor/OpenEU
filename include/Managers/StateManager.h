@@ -29,7 +29,7 @@ class StateManager : public Manager
         virtual ~StateManager();
 
         /* Returns a pointer to the
-           state at the current state index. */
+           current state */
         GameState* getCurrentState();
 
         /* Sets the current state to a new instance of

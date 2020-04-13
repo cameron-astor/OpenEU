@@ -421,7 +421,7 @@
 	<stddef.h>
 	<Engine/Game.h>
 
-1585562288 c:\users\camer\codeblocks\openeu\include\engine\game.h
+1586756926 c:\users\camer\codeblocks\openeu\include\engine\game.h
 	<map>
 	<memory>
 	<SFML/Graphics.hpp>
@@ -432,7 +432,7 @@
 	<Managers/FontManager.h>
 	<States/MenuState.h>
 
-1585562444 source:c:\users\camer\codeblocks\openeu\src\engine\game.cpp
+1586758040 source:c:\users\camer\codeblocks\openeu\src\engine\game.cpp
 	"Engine/Game.h"
 
 1585437154 c:\users\camer\codeblocks\openeu\include\engine\fpscounter.h
@@ -453,14 +453,15 @@
 	<memory>
 	<map>
 
-1585530287 source:c:\users\camer\codeblocks\openeu\src\states\menustate.cpp
+1586757507 source:c:\users\camer\codeblocks\openeu\src\states\menustate.cpp
 	"MenuState.h"
+	<Managers/StateManager.h>
 
-1585530188 c:\users\camer\codeblocks\openeu\include\states\menustate.h
+1586757338 c:\users\camer\codeblocks\openeu\include\states\menustate.h
 	<Engine/GameState.h>
 	<Entity/MenuButton.h>
 
-1585560719 source:c:\users\camer\codeblocks\openeu\src\states\mapstate.cpp
+1586757762 source:c:\users\camer\codeblocks\openeu\src\states\mapstate.cpp
 	"MapState.h"
 
 1584859164 c:\users\camer\codeblocks\openeu\include\mapstate.h
@@ -472,10 +473,10 @@
 1585351345 c:\users\camer\codeblocks\openeu\include\managers\manager.h
 	<SFML/Graphics.hpp>
 
-1585641895 source:c:\users\camer\codeblocks\openeu\src\managers\statemanager.cpp
+1586757569 source:c:\users\camer\codeblocks\openeu\src\managers\statemanager.cpp
 	"StateManager.h"
 
-1585641918 c:\users\camer\codeblocks\openeu\include\managers\statemanager.h
+1586757681 c:\users\camer\codeblocks\openeu\include\managers\statemanager.h
 	<Managers/Manager.h>
 	<Engine/GameState.h>
 	<States/MenuState.h>
@@ -511,8 +512,9 @@
 	<algorithm>
 	<cassert>
 
-1585560715 c:\users\camer\codeblocks\openeu\include\states\mapstate.h
+1586757821 c:\users\camer\codeblocks\openeu\include\states\mapstate.h
 	<Engine/GameState.h>
+	<Managers/TextureManager.h>
 
 1585437069 source:c:\users\camer\codeblocks\openeu\src\engine\entity.cpp
 	"Entity.h"
@@ -533,7 +535,7 @@
 1585437444 c:\users\camer\codeblocks\openeu\include\engine\spritenode.h
 	<Engine/SceneNode.h>
 
-1585564108 source:c:\users\camer\codeblocks\openeu\src\states\loadingstate.cpp
+1586757614 source:c:\users\camer\codeblocks\openeu\src\states\loadingstate.cpp
 	"LoadingState.h"
 	<Managers/StateManager.h>
 

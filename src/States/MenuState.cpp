@@ -1,15 +1,16 @@
 #include "MenuState.h"
+#include <Managers/StateManager.h>
 
 namespace BW {
 
-    MenuState::MenuState(const sf::RenderWindow& window, TextureManager& textures):
-        m_Textures(&textures),
-
+    MenuState::MenuState(const sf::RenderWindow& window, StateManager *sm):
+        m_SM(sm),
+        m_Textures(sm->m_Textures),
         // scene objects
-        m_Background(*textures.get("assets/gfx/textures/main_menu/frontend_backdrop.png")),
-        m_SinglePlayer("Single Player", textures),
-        m_Options("Options", textures),
-        m_Fuck("Fuck", textures)
+        m_Background(*m_Textures->get("assets/gfx/textures/main_menu/frontend_backdrop.png")),
+        m_SinglePlayer("Single Player", *m_Textures),
+        m_Options("Options", *m_Textures),
+        m_Fuck("Fuck", *m_Textures)
 
     {
         buildScene();

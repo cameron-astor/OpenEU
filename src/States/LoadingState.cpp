@@ -19,7 +19,10 @@ namespace BW {
 
     void LoadingState::update(sf::Time dt)
     {
-
+        // user input test
+        if (sf::Keyboard::isKeyPressed(sf::Keyboard::E)) {
+            sm->setState("Menu");
+        }
     }
 
     void LoadingState::buildScene()
