@@ -23,7 +23,7 @@ namespace BW {
 
     void MenuState::update(sf::Time dt)
     {
-
+        handleInput();
     }
 
     void MenuState::buildScene()
@@ -38,4 +38,15 @@ namespace BW {
        m_SceneRoot.attachChild(std::unique_ptr<MenuButton>(&m_Options));
        m_SceneRoot.attachChild(std::unique_ptr<MenuButton>(&m_Fuck));
     }
+
+    void MenuState::handleInput()
+    {
+        // keyboard controls until mouse is implemented
+        if (sf::Keyboard::isKeyPressed(sf::Keyboard::E))
+            m_SM->setState("Map");
+
+        // if (sf::Mouse::isButtonPressed(sf::Mouse::Left))
+            // stuff
+    }
+
 }

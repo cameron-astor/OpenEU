@@ -7,6 +7,7 @@
 #include <States/LoadingState.h>
 #include <States/MapState.h>
 #include <States/DefaultState.h>
+#include <Engine/CommandQueue.h>
 
 namespace BW {
 
@@ -14,18 +15,19 @@ namespace BW {
 * Manages storing and switching between the game's states.
 * States are not saved when swapped (i.e. a new instance is created upon switching)
 *
-* @param the window on which to render, various resource managers
 */
 
 /* TODO
-    - use a stack instead of a vector
+    - Redo with a stack system
+    - Perhaps replace bloated constructor parameters with set() functions
+    - Replace string state assignment with an enum of possible states
 */
 
 class StateManager : public Manager
 {
     public:
 
-        StateManager(const sf::RenderWindow& window, TextureManager* tptr, FontManager* fptr);
+        StateManager(const sf::RenderWindow& window, TextureManager* tptr, FontManager* fptr, CommandQueue* cq);
         virtual ~StateManager();
 
         /* Returns a pointer to the
@@ -41,6 +43,9 @@ class StateManager : public Manager
         FontManager *m_Fonts;
         // Audio
         // etc
+
+        // Reference to command queue
+        CommandQueue *m_CQueue;
 
     private:
         // Pointer to the current game state

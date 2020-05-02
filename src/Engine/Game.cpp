@@ -3,12 +3,15 @@
 namespace BW {
 
     Game::Game():DEFAULT_TITLE("Brainwerk Engine"), // title of window (in absence of definition)
-                     m_Window(sf::VideoMode(DEFAULT_VIDEO_WIDTH, DEFAULT_VIDEO_HEIGHT, DEFAULT_VIDEO_BPP), DEFAULT_TITLE), rs(),
+                     m_Window(sf::VideoMode(DEFAULT_VIDEO_WIDTH, DEFAULT_VIDEO_HEIGHT, DEFAULT_VIDEO_BPP), DEFAULT_TITLE), rs(), m_isInFocus(true),
                      counter(), timePerUpdateTick(sf::seconds(1.f/60.f)), // 60hz
                      m_Textures(new TextureManager), m_Fonts(new FontManager), // initialize asset managers
-                     m_States(nullptr) // state manager reference (to be assigned in initialization)
+                     m_States(nullptr), // state manager reference (to be assigned in initialization)
+                     m_CQueue(new CommandQueue), // initialize command queue
+                     m_Player()
     {
         m_Window.setFramerateLimit(FRAMERATE_LIMIT); // Limit rendering fps
+        m_Window.setKeyRepeatEnabled(false);
     }
 
     Game::~Game()
@@ -22,7 +25,7 @@ namespace BW {
 
         loadFirstResources(); // load resources necessary for loading screen
 
-        m_States = new StateManager(m_Window, m_Textures, m_Fonts); // create state manager
+        m_States = new StateManager(m_Window, m_Textures, m_Fonts, m_CQueue); // create state manager
         m_States->setState("Loading"); // loading screen (during which resources are loaded)
 
         gameLoop(); // start the game loop
@@ -58,6 +61,8 @@ namespace BW {
         sf::Event event;
         while (m_Window.pollEvent(event))
         {
+            m_Player.handleEvent(event, m_CQueue);
+
             switch (event.type)
             {
                 case sf::Event::Closed:
@@ -66,7 +71,15 @@ namespace BW {
                 case sf::Event::Resized: // So it doesn't stretch when resized
                     m_Window.setView(sf::View(sf::FloatRect(0, 0, event.size.width, event.size.height)));
                     break;
+                case sf::Event::GainedFocus: // user selects app window in OS
+                    m_isInFocus = true;
+                    break;
+                case sf::Event::LostFocus: // user deselects app window
+                    m_isInFocus = false;
+                    break;
             }
+
+            m_Player.handleRealtimeInput(m_CQueue);
         }
     }
 

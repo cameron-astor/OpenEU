@@ -20,7 +20,8 @@ namespace BW {
     void LoadingState::update(sf::Time dt)
     {
         // user input test
-        if (sf::Keyboard::isKeyPressed(sf::Keyboard::E)) {
+        // PROBLEM: REPEATED INPUT (CANT USE KEY REPEAT DISABLE FOR WINDOW WHEN GETTING REAL TIME EVENTS)
+        if (sf::Keyboard::isKeyPressed(sf::Keyboard::A)) {
             sm->setState("Menu");
         }
     }

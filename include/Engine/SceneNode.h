@@ -6,6 +6,7 @@
 #include <vector>
 #include <algorithm>
 #include <cassert>
+#include <Engine/Command.h>
 
 namespace BW {
 
@@ -33,6 +34,10 @@ class SceneNode : public sf::Transformable, public sf::Drawable, private sf::Non
         /* Obtains the absolute transform of a node (i.e. relative to the whole world) */
         sf::Transform getWorldTransform() const;
         sf::Vector2f getWorldPosition() const;
+
+        /* Message system functions */
+        virtual unsigned int getCategory();
+        void onCommand(const Command&);
 
     private:
         std::vector<NodePtr> mChildren;

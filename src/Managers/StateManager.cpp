@@ -2,8 +2,8 @@
 
 namespace BW {
 
-    StateManager::StateManager(const sf::RenderWindow& window, TextureManager* tptr, FontManager* fptr):
-        m_Textures(tptr), m_Fonts(fptr),
+    StateManager::StateManager(const sf::RenderWindow& window, TextureManager* tptr, FontManager* fptr, CommandQueue* cq):
+        m_Textures(tptr), m_Fonts(fptr), m_CQueue(cq),
         m_Window(&window)
     {
         currentState = new DefaultState;
@@ -28,6 +28,8 @@ namespace BW {
             currentState = new LoadingState(*m_Window, this);
         else if (state == "Menu")
             currentState = new MenuState(*m_Window, this);
+        else if (state == "Map")
+            currentState = new MapState(*m_Window, this);
     }
 
 }

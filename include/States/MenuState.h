@@ -34,6 +34,9 @@ class MenuState : public GameState
     private:
         virtual void buildScene();
 
+        // Handle clicks on the menu buttons
+        void handleInput();
+
         // Reference to state manager parent
         StateManager *m_SM;
         TextureManager *m_Textures;

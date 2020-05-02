@@ -11,7 +11,7 @@ class StateManager; // forward declaration
 class MapState : public GameState
 {
     public:
-        MapState(sf::RenderWindow& window, StateManager *sm);
+        MapState(const sf::RenderWindow& window, StateManager *sm);
         virtual ~MapState();
 
         virtual void draw(sf::RenderTarget& target, sf::RenderStates states) const
