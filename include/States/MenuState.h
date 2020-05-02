@@ -17,10 +17,12 @@ namespace BW {
     - custom assets (at some point)
 */
 
+class StateManager; // forward declaration
+
 class MenuState : public GameState
 {
     public:
-        MenuState(const sf::RenderWindow& window, TextureManager& textures);
+        MenuState(const sf::RenderWindow& window, StateManager *sm);
         virtual ~MenuState();
 
         virtual void draw(sf::RenderTarget& target, sf::RenderStates states) const
@@ -32,8 +34,14 @@ class MenuState : public GameState
     private:
         virtual void buildScene();
 
-        SceneNode m_SceneRoot;
+        // Handle clicks on the menu buttons
+        void handleInput();
+
+        // Reference to state manager parent
+        StateManager *m_SM;
         TextureManager *m_Textures;
+
+        SceneNode m_SceneRoot;
 
         // Scene objects
         SpriteNode m_Background; // background sprite

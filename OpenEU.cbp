@@ -63,10 +63,14 @@
 		<Linker>
 			<Add directory="C:/Users/camer/C++/SFML-2.5.1/lib" />
 		</Linker>
+		<Unit filename="include/Engine/Category.h" />
+		<Unit filename="include/Engine/Command.h" />
+		<Unit filename="include/Engine/CommandQueue.h" />
 		<Unit filename="include/Engine/Entity.h" />
 		<Unit filename="include/Engine/FpsCounter.h" />
 		<Unit filename="include/Engine/Game.h" />
 		<Unit filename="include/Engine/GameState.h" />
+		<Unit filename="include/Engine/Player.h" />
 		<Unit filename="include/Engine/SceneNode.h" />
 		<Unit filename="include/Engine/SpriteNode.h" />
 		<Unit filename="include/Engine/TextNode.h" />
@@ -80,10 +84,12 @@
 		<Unit filename="include/States/LoadingState.h" />
 		<Unit filename="include/States/MapState.h" />
 		<Unit filename="include/States/MenuState.h" />
+		<Unit filename="src/Engine/CommandQueue.cpp" />
 		<Unit filename="src/Engine/Entity.cpp" />
 		<Unit filename="src/Engine/FpsCounter.cpp" />
 		<Unit filename="src/Engine/Game.cpp" />
 		<Unit filename="src/Engine/GameState.cpp" />
+		<Unit filename="src/Engine/Player.cpp" />
 		<Unit filename="src/Engine/SceneNode.cpp" />
 		<Unit filename="src/Engine/SpriteNode.cpp" />
 		<Unit filename="src/Engine/TextNode.cpp" />
