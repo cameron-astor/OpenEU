@@ -19,11 +19,11 @@ namespace BW {
 
     void LoadingState::update(sf::Time dt)
     {
-        // user input test
-        // PROBLEM: REPEATED INPUT (CANT USE KEY REPEAT DISABLE FOR WINDOW WHEN GETTING REAL TIME EVENTS)
-        if (sf::Keyboard::isKeyPressed(sf::Keyboard::A)) {
-            sm->setState("Menu");
-        }
+//         user input test
+//         PROBLEM: REPEATED INPUT (CANT USE KEY REPEAT DISABLE FOR WINDOW WHEN GETTING REAL TIME EVENTS)
+//        if (sf::Keyboard::isKeyPressed(sf::Keyboard::A)) {
+//            sm->setState("Menu");
+//        }
     }
 
     void LoadingState::buildScene()
