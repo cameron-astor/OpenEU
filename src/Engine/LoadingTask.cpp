@@ -3,7 +3,8 @@
 namespace BW {
 
     LoadingTask::LoadingTask(TextureManager* tm, FontManager* fm):
-        m_Textures(tm), m_Fonts(fm)
+        m_Textures(tm), m_Fonts(fm),
+        m_Finished(false)
     {
         //ctor
     }
@@ -17,6 +18,7 @@ namespace BW {
     {
         std::thread load ( [this] { this->load(); } );
         load.join();
+        m_Finished = true;
     }
 
     void LoadingTask::load()
@@ -25,5 +27,11 @@ namespace BW {
         m_Textures->load("assets/gfx/textures/main_menu/menu_button.png");
         m_Fonts->load("assets/gfx/fonts/Px437_IBM_BIOS.ttf");
     }
+
+    bool LoadingTask::isFinished()
+    {
+        return m_Finished;
+    }
+
 
 }

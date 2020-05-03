@@ -44,7 +44,7 @@ class LoadingState : public GameState
 
 
         // loading task (parallel thread)
-        LoadingTask ld;
+        LoadingTask m_ld;
 
 
 };

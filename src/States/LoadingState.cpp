@@ -8,10 +8,10 @@ namespace BW {
         m_SceneRoot(),
         m_Background(*sm->m_Textures->get("assets/gfx/textures/loadingscreens/loading_screen.png")),
         m_LoadingText(), m_Text(m_LoadingText),
-        ld(sm->m_Textures, sm->m_Fonts)
+        m_ld(sm->m_Textures, sm->m_Fonts)
     {
        buildScene();
-       ld.run();
+       m_ld.run();
     }
 
     LoadingState::~LoadingState()
@@ -21,11 +21,9 @@ namespace BW {
 
     void LoadingState::update(sf::Time dt)
     {
-//         user input test
-//         PROBLEM: REPEATED INPUT (CANT USE KEY REPEAT DISABLE FOR WINDOW WHEN GETTING REAL TIME EVENTS)
-//        if (sf::Keyboard::isKeyPressed(sf::Keyboard::A)) {
-//            sm->setState("Menu");
-//        }
+        if (m_ld.isFinished()) {
+            sm->setState("Menu");
+        }
     }
 
     void LoadingState::buildScene()

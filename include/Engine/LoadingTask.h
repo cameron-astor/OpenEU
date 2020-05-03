@@ -13,12 +13,17 @@ namespace BW {
             LoadingTask(TextureManager* tm, FontManager* fm);
             virtual ~LoadingTask();
 
+            // execute the loading task
             void run();
+            bool isFinished();
 
         private:
             void load();
             TextureManager *m_Textures;
             FontManager *m_Fonts;
+
+        private:
+            bool m_Finished;
 
     };
 

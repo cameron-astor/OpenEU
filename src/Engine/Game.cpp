@@ -102,11 +102,6 @@ namespace BW {
         /* Loading screen resources*/
         m_Textures->load("assets/gfx/textures/loadingscreens/loading_screen.png");
         m_Fonts->load("assets/gfx/fonts/arial.ttf");
-
-        /* DEBUG */
-//        m_Textures->load("assets/gfx/textures/main_menu/frontend_backdrop.png");
-//        m_Textures->load("assets/gfx/textures/main_menu/menu_button.png");
-//        m_Fonts->load("assets/gfx/fonts/Px437_IBM_BIOS.ttf");
     }
 
 
