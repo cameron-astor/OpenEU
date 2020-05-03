@@ -4,6 +4,7 @@
 namespace BW {
 
     MenuState::MenuState(const sf::RenderWindow& window, StateManager *sm):
+        m_Window(window),
         m_SM(sm),
         m_Textures(sm->m_Textures),
         // scene objects
@@ -41,12 +42,7 @@ namespace BW {
 
     void MenuState::handleInput()
     {
-        // keyboard controls until mouse is implemented
-        if (sf::Keyboard::isKeyPressed(sf::Keyboard::E))
-            m_SM->setState("Map");
 
-        // if (sf::Mouse::isButtonPressed(sf::Mouse::Left))
-            // stuff
     }
 
 }

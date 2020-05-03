@@ -37,6 +37,9 @@ class MenuState : public GameState
         // Handle clicks on the menu buttons
         void handleInput();
 
+        // Reference to window
+        const sf::RenderWindow& m_Window;
+
         // Reference to state manager parent
         StateManager *m_SM;
         TextureManager *m_Textures;
