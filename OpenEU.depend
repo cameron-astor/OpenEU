@@ -539,12 +539,13 @@
 1585437444 c:\users\camer\codeblocks\openeu\include\engine\spritenode.h
 	<Engine/SceneNode.h>
 
-1588497107 source:c:\users\camer\codeblocks\openeu\src\states\loadingstate.cpp
+1588499581 source:c:\users\camer\codeblocks\openeu\src\states\loadingstate.cpp
 	"LoadingState.h"
 	<Managers/StateManager.h>
 
-1585563599 c:\users\camer\codeblocks\openeu\include\states\loadingstate.h
+1588499476 c:\users\camer\codeblocks\openeu\include\states\loadingstate.h
 	<Engine/GameState.h>
+	<Engine/LoadingTask.h>
 	<Managers/AssetManager.h>
 	<Managers/TextureManager.h>
 	<Managers/FontManager.h>
@@ -588,4 +589,12 @@
 1588417114 c:\users\camer\codeblocks\openeu\include\engine\player.h
 	<SFML/Window/Event.hpp>
 	<Engine/CommandQueue.h>
+
+1588498910 c:\users\camer\codeblocks\openeu\include\engine\loadingtask.h
+	<thread>
+	<Managers/TextureManager.h>
+	<Managers/FontManager.h>
+
+1588499266 source:c:\users\camer\codeblocks\openeu\src\engine\loadingtask.cpp
+	"LoadingTask.h"
 

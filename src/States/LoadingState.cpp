@@ -7,9 +7,11 @@ namespace BW {
         sm(sm),
         m_SceneRoot(),
         m_Background(*sm->m_Textures->get("assets/gfx/textures/loadingscreens/loading_screen.png")),
-        m_LoadingText(), m_Text(m_LoadingText)
+        m_LoadingText(), m_Text(m_LoadingText),
+        ld(sm->m_Textures, sm->m_Fonts)
     {
        buildScene();
+       ld.run();
     }
 
     LoadingState::~LoadingState()

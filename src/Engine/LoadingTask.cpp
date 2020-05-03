@@ -15,7 +15,8 @@ namespace BW {
 
     void LoadingTask::run()
     {
-        std::thread load (load);
+        std::thread load ( [this] { this->load(); } );
+        load.join();
     }
 
     void LoadingTask::load()

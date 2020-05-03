@@ -2,6 +2,7 @@
 #define LOADINGSTATE_H
 
 #include <Engine/GameState.h>
+#include <Engine/LoadingTask.h>
 #include <Managers/AssetManager.h>
 #include <Managers/TextureManager.h>
 #include <Managers/FontManager.h>
@@ -40,6 +41,11 @@ class LoadingState : public GameState
         SpriteNode m_Background;
         sf::Text m_LoadingText;
         TextNode m_Text;
+
+
+        // loading task (parallel thread)
+        LoadingTask ld;
+
 
 };
 
