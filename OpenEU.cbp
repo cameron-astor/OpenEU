@@ -63,7 +63,6 @@
 		<Linker>
 			<Add directory="C:/Users/camer/C++/SFML-2.5.1/lib" />
 		</Linker>
-		<Unit filename="include/Engine/Category.h" />
 		<Unit filename="include/Engine/Command.h" />
 		<Unit filename="include/Engine/CommandQueue.h" />
 		<Unit filename="include/Engine/Entity.h" />

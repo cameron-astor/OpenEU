@@ -37,7 +37,7 @@ class SceneNode : public sf::Transformable, public sf::Drawable, private sf::Non
 
         /* Message system functions */
         virtual unsigned int getCategory();
-        void onCommand(const Command&);
+        void onCommand(const Command& command, sf::Time dt);
 
     private:
         std::vector<NodePtr> mChildren;

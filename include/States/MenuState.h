@@ -35,7 +35,7 @@ class MenuState : public GameState
         virtual void buildScene();
 
         // Handle clicks on the menu buttons
-        void handleInput();
+        void handleInput(sf::Time dt);
 
         // Reference to window
         const sf::RenderWindow& m_Window;

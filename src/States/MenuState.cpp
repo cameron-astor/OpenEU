@@ -24,7 +24,7 @@ namespace BW {
 
     void MenuState::update(sf::Time dt)
     {
-        handleInput();
+        handleInput(dt);
     }
 
     void MenuState::buildScene()
@@ -40,9 +40,12 @@ namespace BW {
        m_SceneRoot.attachChild(std::unique_ptr<MenuButton>(&m_Fuck));
     }
 
-    void MenuState::handleInput()
+    void MenuState::handleInput(sf::Time dt)
     {
-
+        while (!m_SM->m_CQueue->isEmpty())
+        {
+            m_SceneRoot.onCommand(m_SM->m_CQueue->pop(), dt);
+        }
     }
 
 }
