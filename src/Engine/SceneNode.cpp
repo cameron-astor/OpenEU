@@ -70,9 +70,21 @@ namespace BW {
 
     }
 
+    void SceneNode::onCommand(const Command& command, sf::Time dt)
+    {
+        if (command.category & getCategory()) // if the categories match (checked with AND bitwise operator)
+            command.action(*this, dt);
+
+        // forward to children
+        for (const NodePtr& child : mChildren)
+        {
+            child->onCommand(command, dt);
+        }
+    }
+
     unsigned int SceneNode::getCategory()
     {
-        return Category::Scene;
+        return Category::Scene; // default scene node category
     }
 
 }

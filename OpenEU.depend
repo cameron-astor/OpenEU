@@ -505,10 +505,10 @@
 	<Managers/AssetManager.h>
 	<SFML/Graphics/Texture.hpp>
 
-1588417114 source:c:\users\camer\codeblocks\openeu\src\engine\scenenode.cpp
+1588577845 source:c:\users\camer\codeblocks\openeu\src\engine\scenenode.cpp
 	"SceneNode.h"
 
-1588417114 c:\users\camer\codeblocks\openeu\include\engine\scenenode.h
+1588577617 c:\users\camer\codeblocks\openeu\include\engine\scenenode.h
 	<SFML/Graphics.hpp>
 	<memory>
 	<vector>
@@ -576,20 +576,20 @@
 	<Engine/Command.h>
 	<queue>
 
-1588417114 c:\users\camer\codeblocks\openeu\include\engine\command.h
-	<Engine/Category.h>
+1588576844 c:\users\camer\codeblocks\openeu\include\engine\command.h
 	<SFML/System/Time.hpp>
 	<functional>
 
 1588417114 c:\users\camer\codeblocks\openeu\include\engine\category.h
 
-1588417114 source:c:\users\camer\codeblocks\openeu\src\engine\player.cpp
+1588577342 source:c:\users\camer\codeblocks\openeu\src\engine\player.cpp
 	"Player.h"
 
-1588574014 c:\users\camer\codeblocks\openeu\include\engine\player.h
+1588577193 c:\users\camer\codeblocks\openeu\include\engine\player.h
 	<SFML/Window/Event.hpp>
 	<Engine/CommandQueue.h>
 	<map>
+	<iostream>
 
 1588501867 c:\users\camer\codeblocks\openeu\include\engine\loadingtask.h
 	<thread>

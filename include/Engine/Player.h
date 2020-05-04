@@ -5,6 +5,9 @@
 #include <Engine/CommandQueue.h>
 #include <map>
 
+// debug
+#include <iostream>
+
 namespace BW {
 
     class Player
