@@ -1,7 +1,7 @@
 #ifndef STATEMANAGER_H
 #define STATEMANAGER_H
 
-#include <Managers/Manager.h>
+#include <SFML/Graphics.hpp>
 #include <Engine/GameState.h>
 #include <States/MenuState.h>
 #include <States/LoadingState.h>
@@ -23,7 +23,7 @@ namespace BW {
     - Replace string state assignment with an enum of possible states
 */
 
-class StateManager : public Manager
+class StateManager
 {
     public:
 

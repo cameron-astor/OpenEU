@@ -27,7 +27,6 @@
 // Engine
 #include <Engine/FpsCounter.h>
 #include <Engine/CommandQueue.h>
-#include <Managers/Manager.h>
 #include <Managers/StateManager.h>
 #include <Managers/TextureManager.h>
 #include <Managers/FontManager.h>

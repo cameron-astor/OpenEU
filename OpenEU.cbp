@@ -58,10 +58,10 @@
 		</Build>
 		<Compiler>
 			<Add option="-Wall" />
-			<Add directory="C:/Users/camer/C++/SFML-2.5.1/include" />
+			<Add directory="lib/SFML-2.5.1/include" />
 		</Compiler>
 		<Linker>
-			<Add directory="C:/Users/camer/C++/SFML-2.5.1/lib" />
+			<Add directory="lib/SFML-2.5.1/lib" />
 		</Linker>
 		<Unit filename="include/Engine/Command.h" />
 		<Unit filename="include/Engine/CommandQueue.h" />
@@ -76,8 +76,8 @@
 		<Unit filename="include/Engine/TextNode.h" />
 		<Unit filename="include/Entity/MenuButton.h" />
 		<Unit filename="include/Managers/AssetManager.h" />
+		<Unit filename="include/Managers/AssetWarehouse.h" />
 		<Unit filename="include/Managers/FontManager.h" />
-		<Unit filename="include/Managers/Manager.h" />
 		<Unit filename="include/Managers/StateManager.h" />
 		<Unit filename="include/Managers/TextureManager.h" />
 		<Unit filename="include/States/DefaultState.h" />
@@ -96,8 +96,8 @@
 		<Unit filename="src/Engine/TextNode.cpp" />
 		<Unit filename="src/Entity/MenuButton.cpp" />
 		<Unit filename="src/Managers/AssetManager.cpp" />
+		<Unit filename="src/Managers/AssetWarehouse.cpp" />
 		<Unit filename="src/Managers/FontManager.cpp" />
-		<Unit filename="src/Managers/Manager.cpp" />
 		<Unit filename="src/Managers/StateManager.cpp" />
 		<Unit filename="src/Managers/TextureManager.cpp" />
 		<Unit filename="src/States/DefaultState.cpp" />
