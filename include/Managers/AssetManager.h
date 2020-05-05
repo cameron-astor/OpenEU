@@ -1,7 +1,7 @@
 #ifndef ASSETMANAGER_H
 #define ASSETMANAGER_H
 
-#include <Managers/Manager.h>
+#include <SFML/Graphics.hpp>
 #include <string>
 #include <map>
 #include <memory>
@@ -15,7 +15,7 @@ namespace BW {
 /* Interface for classes which load heavyweight graphical and audio assets
    from disk and keep track of them for use during runtime. */
 
-class AssetManager : public Manager
+class AssetManager
 {
     public:
         AssetManager();

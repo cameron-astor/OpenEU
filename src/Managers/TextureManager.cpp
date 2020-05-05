@@ -2,17 +2,9 @@
 
 namespace BW {
 
-    TextureManager::TextureManager():m_TextureMap()
-    {
-        /* Test of TextureManager, to be put into loading state later */
-        // this->load("assets/gfx/textures/main_menu/menu_button.png");
-        // this->load("assets/gfx/textures/main_menu/frontend_backdrop.png");
-    }
+    TextureManager::TextureManager():m_TextureMap() { }
 
-    TextureManager::~TextureManager()
-    {
-        //dtor
-    }
+    TextureManager::~TextureManager() { }
 
     bool TextureManager::load(const std::string& filename)
     {
