@@ -18,8 +18,7 @@ namespace BW {
 */
 
 /* TODO
-    - Redo with a stack system
-    - Perhaps replace bloated constructor parameters with set() functions
+    - Perhaps replace bloated constructor parameters with set() functions (nvm gonna make asset warehouse)
     - Replace string state assignment with an enum of possible states
 */
 

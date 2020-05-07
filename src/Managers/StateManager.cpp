@@ -11,7 +11,7 @@ namespace BW {
 
     StateManager::~StateManager()
     {
-        //dtor
+        delete currentState;
     }
 
     GameState* StateManager::getCurrentState()
@@ -21,7 +21,7 @@ namespace BW {
 
     void StateManager::setState(sf::String state)
     {
-        delete currentState;
+        GameState *oldState = currentState;
         if (state == "Default")
             currentState = new DefaultState;
         else if (state == "Loading")
@@ -30,6 +30,7 @@ namespace BW {
             currentState = new MenuState(*m_Window, this);
         else if (state == "Map")
             currentState = new MapState(*m_Window, this);
+        delete oldState;
     }
 
 }
