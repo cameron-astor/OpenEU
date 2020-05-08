@@ -5,9 +5,9 @@ namespace BW {
     Game::Game():DEFAULT_TITLE("Brainwerk Engine"), // title of window (in absence of definition)
                      m_Window(sf::VideoMode(DEFAULT_VIDEO_WIDTH, DEFAULT_VIDEO_HEIGHT, DEFAULT_VIDEO_BPP), DEFAULT_TITLE), rs(), m_isInFocus(true),
                      counter(), timePerUpdateTick(sf::seconds(1.f/60.f)), // 60hz
-                     m_Textures(new TextureManager), m_Fonts(new FontManager), // initialize asset managers
-                     m_States(nullptr), // state manager reference (to be assigned in initialization)
-                     m_CQueue(new CommandQueue), // initialize command queue
+                     m_Textures(), m_Fonts(), // initialize asset managers
+                     m_CQueue(), // initialize command queue
+                     m_States(m_Window, m_Textures, m_Fonts, m_CQueue), // state manager reference (to be assigned in initialization)
                      m_Player()
     {
         m_Window.setFramerateLimit(FRAMERATE_LIMIT); // Limit rendering fps
@@ -25,8 +25,7 @@ namespace BW {
 
         loadFirstResources(); // load resources necessary for loading screen
 
-        m_States = new StateManager(m_Window, m_Textures, m_Fonts, m_CQueue); // create state manager
-        m_States->setState("Loading"); // loading screen (during which resources are loaded)
+        m_States.setState("Loading"); // loading screen (during which resources are loaded)
 
         gameLoop(); // start the game loop
 
@@ -85,13 +84,13 @@ namespace BW {
 
     void Game::update()
     {
-        m_States->getCurrentState()->update(timePerUpdateTick); // update current state
+        m_States.getCurrentState()->update(timePerUpdateTick); // update current state
     }
 
     void Game::render()
     {
         m_Window.clear();
-        m_States->getCurrentState()->draw(m_Window, rs); // draw the current state
+        m_States.getCurrentState()->draw(m_Window, rs); // draw the current state
         m_Window.draw(*counter.getFpsCounter()); // draw fps counter
         m_Window.display();
     }
@@ -100,8 +99,8 @@ namespace BW {
     void Game::loadFirstResources()
     {
         /* Loading screen resources*/
-        m_Textures->load("assets/gfx/textures/loadingscreens/loading_screen.png");
-        m_Fonts->load("assets/gfx/fonts/arial.ttf");
+        m_Textures.load("assets/gfx/textures/loadingscreens/loading_screen.png");
+        m_Fonts.load("assets/gfx/fonts/arial.ttf");
     }
 
 

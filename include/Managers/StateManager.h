@@ -26,7 +26,7 @@ class StateManager
 {
     public:
 
-        StateManager(const sf::RenderWindow& window, TextureManager* tptr, FontManager* fptr, CommandQueue* cq);
+        StateManager(const sf::RenderWindow& window, TextureManager& tptr, FontManager& fptr, CommandQueue& cq);
         virtual ~StateManager();
 
         /* Returns a pointer to the
@@ -38,13 +38,13 @@ class StateManager
         void setState(sf::String state);
 
         // References to resource managers
-        TextureManager *m_Textures;
-        FontManager *m_Fonts;
+        TextureManager& m_Textures;
+        FontManager& m_Fonts;
         // Audio
         // etc
 
         // Reference to command queue
-        CommandQueue *m_CQueue;
+        CommandQueue& m_CQueue;
 
     private:
         // Pointer to the current game state

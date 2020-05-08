@@ -84,14 +84,14 @@ class Game
         /* MANAGERS */
 
         /* Asset managers */
-        TextureManager *m_Textures;
-        FontManager *m_Fonts;
-
-        /* State manager */
-        StateManager *m_States;
+        TextureManager m_Textures;
+        FontManager m_Fonts;
 
         /* COMMAND QUEUE */
-        CommandQueue *m_CQueue;
+        CommandQueue m_CQueue;
+
+        /* State manager pointer */
+        StateManager m_States;
 
         /* PLAYER CLASS */
         Player m_Player;

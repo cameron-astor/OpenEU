@@ -8,10 +8,10 @@ namespace BW {
         m_SM(sm),
         m_Textures(sm->m_Textures),
         // scene objects
-        m_Background(*m_Textures->get("assets/gfx/textures/main_menu/frontend_backdrop.png")),
-        m_SinglePlayer("Single Player", *m_Textures),
-        m_Options("Options", *m_Textures),
-        m_Fuck("Fuck", *m_Textures)
+        m_Background(m_Textures.get("assets/gfx/textures/main_menu/frontend_backdrop.png")),
+        m_SinglePlayer("Single Player", m_Textures),
+        m_Options("Options", m_Textures),
+        m_Fuck("Fuck", m_Textures)
 
     {
         buildScene();
@@ -42,9 +42,9 @@ namespace BW {
 
     void MenuState::handleInput(sf::Time dt)
     {
-        while (!m_SM->m_CQueue->isEmpty())
+        while (!m_SM->m_CQueue.isEmpty())
         {
-            m_SceneRoot.onCommand(m_SM->m_CQueue->pop(), dt);
+            m_SceneRoot.onCommand(m_SM->m_CQueue.pop(), dt);
         }
     }
 

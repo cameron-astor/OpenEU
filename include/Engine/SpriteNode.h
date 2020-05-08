@@ -13,7 +13,7 @@ namespace BW {
     class SpriteNode : public SceneNode
     {
         public:
-            explicit SpriteNode(const sf::Texture& texture);
+            explicit SpriteNode(std::shared_ptr<sf::Texture> texture);
             SpriteNode(const sf::Texture& texture, const sf::IntRect& rect);
             void setPosition(float x, float y);
 

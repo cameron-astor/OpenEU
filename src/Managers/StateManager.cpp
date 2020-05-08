@@ -2,7 +2,7 @@
 
 namespace BW {
 
-    StateManager::StateManager(const sf::RenderWindow& window, TextureManager* tptr, FontManager* fptr, CommandQueue* cq):
+    StateManager::StateManager(const sf::RenderWindow& window, TextureManager& tptr, FontManager& fptr, CommandQueue& cq):
         m_Textures(tptr), m_Fonts(fptr), m_CQueue(cq),
         m_Window(&window)
     {
@@ -11,7 +11,7 @@ namespace BW {
 
     StateManager::~StateManager()
     {
-        delete currentState;
+
     }
 
     GameState* StateManager::getCurrentState()
@@ -21,7 +21,7 @@ namespace BW {
 
     void StateManager::setState(sf::String state)
     {
-        GameState *oldState = currentState;
+        // delete currentState;
         if (state == "Default")
             currentState = new DefaultState;
         else if (state == "Loading")
@@ -30,7 +30,6 @@ namespace BW {
             currentState = new MenuState(*m_Window, this);
         else if (state == "Map")
             currentState = new MapState(*m_Window, this);
-        delete oldState;
     }
 
 }
