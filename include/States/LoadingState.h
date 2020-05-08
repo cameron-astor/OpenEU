@@ -38,9 +38,8 @@ class LoadingState : public GameState
         // scene objects
 
         // test background
-         SpriteNode m_Background;
-         //sf::Text m_LoadingText;
-//         TextNode m_Text;
+        SpriteNode m_Background;
+        TextNode m_Text;
 
 
         // loading task (parallel thread)

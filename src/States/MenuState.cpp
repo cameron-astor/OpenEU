@@ -34,10 +34,10 @@ namespace BW {
        m_Options.setPosition(700.f, 500.f);
        m_Fuck.setPosition(700.f, 600.f);
 
-       m_SceneRoot.attachChild(std::unique_ptr<SpriteNode>(&m_Background));
-       m_SceneRoot.attachChild(std::unique_ptr<MenuButton>(&m_SinglePlayer));
-       m_SceneRoot.attachChild(std::unique_ptr<MenuButton>(&m_Options));
-       m_SceneRoot.attachChild(std::unique_ptr<MenuButton>(&m_Fuck));
+       m_SceneRoot.attachChild(&m_Background);
+       m_SceneRoot.attachChild(&m_SinglePlayer);
+       m_SceneRoot.attachChild(&m_Options);
+       m_SceneRoot.attachChild(&m_Fuck);
     }
 
     void MenuState::handleInput(sf::Time dt)

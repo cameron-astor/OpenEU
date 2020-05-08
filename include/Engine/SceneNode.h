@@ -17,7 +17,7 @@ namespace BW {
 class SceneNode : public sf::Transformable, public sf::Drawable, private sf::NonCopyable
 {
     public:
-        typedef std::unique_ptr<SceneNode> NodePtr;
+        typedef SceneNode* NodePtr;
 
     public:
         SceneNode();

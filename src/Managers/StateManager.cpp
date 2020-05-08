@@ -21,7 +21,7 @@ namespace BW {
 
     void StateManager::setState(sf::String state)
     {
-        // delete currentState;
+        delete currentState;
         if (state == "Default")
             currentState = new DefaultState;
         else if (state == "Loading")

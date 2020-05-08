@@ -37,6 +37,7 @@ class StateManager
            the requested state. Deletes the previous state. */
         void setState(sf::String state);
 
+    public:
         // References to resource managers
         TextureManager& m_Textures;
         FontManager& m_Fonts;
@@ -51,8 +52,9 @@ class StateManager
         GameState *currentState;
 
         // Reference to the render window
-        const sf::RenderWindow *m_Window;
 
+        // TODO convert to reference
+        const sf::RenderWindow *m_Window;
 
 };
 
