@@ -25,7 +25,8 @@ namespace BW {
     {
         m_Textures.load("assets/gfx/textures/main_menu/frontend_backdrop.png");
         m_Textures.load("assets/gfx/textures/main_menu/menu_button.png");
-        m_Fonts.load("assets/gfx/fonts/Px437_IBM_BIOS.ttf");
+        m_Fonts.loadAll();
+        // m_Fonts.load("assets/gfx/fonts/Px437_IBM_BIOS.ttf");
     }
 
     bool LoadingTask::isFinished()

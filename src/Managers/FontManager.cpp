@@ -31,7 +31,12 @@ namespace BW {
 
     bool FontManager::loadAll()
     {
-        return false;
+        std::filesystem::path p("assets/gfx/fonts");
+        for (const auto& entry : std::filesystem::directory_iterator(p)) {
+            auto filename = entry.path().filename();
+            this->load(entry.path().string());
+        }
+        return true;
     }
 
     std::shared_ptr<sf::Font> FontManager::get(std::string filename) const
