@@ -5,7 +5,7 @@ namespace BW {
     MenuButton::MenuButton(sf::String text, const TextureManager& textures):
         m_Font(), m_Text()
     {
-        if (m_Font.loadFromFile("assets/gfx/fonts/Px437_IBM_BIOS.ttf")) { // setup text (refactor once font manager is created)
+        if (m_Font.loadFromFile("assets/init_resources/Px437_IBM_BIOS.ttf")) { // setup text (refactor once font manager is created)
             m_Text.setFont(m_Font);
             m_Text.setCharacterSize(8);
             m_Text.setColor(sf::Color::Black);
@@ -14,7 +14,7 @@ namespace BW {
             m_Text.setPosition(0.f, 0.f);
         }
 
-        m_Sprite.setTexture(*textures.get("assets/gfx/textures/main_menu/menu_button.png")); // setup sprite
+        m_Sprite.setTexture(*textures.get("menu_button.png")); // setup sprite
 
         // Align sprite transform axis to center (make this operation available to all entities at some point)
         sf::FloatRect bounds = m_Sprite.getLocalBounds();

@@ -8,7 +8,7 @@ namespace BW {
         m_SM(sm),
         m_Textures(sm->m_Textures),
         // scene objects
-        m_Background(m_Textures.get("assets/gfx/textures/main_menu/frontend_backdrop.png")),
+        m_Background(m_Textures.get("frontend_backdrop.png")),
         m_SinglePlayer("Single Player", m_Textures),
         m_Options("Options", m_Textures),
         m_Fuck("Fuck", m_Textures)

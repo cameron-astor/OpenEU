@@ -99,8 +99,8 @@ namespace BW {
     void Game::loadFirstResources()
     {
         /* Loading screen resources*/
-        m_Textures.load("assets/gfx/textures/loadingscreens/loading_screen.png");
-        m_Fonts.load("assets/gfx/fonts/arial.ttf");
+        m_Textures.load("assets/init_resources/loading_screen.png");
+        m_Fonts.load("assets/init_resources/arial.ttf");
     }
 
 
