@@ -16,7 +16,7 @@ namespace BW {
         //dtor
     }
 
-    void Player::handleEvent(const sf::Event& event, CommandQueue* cq)
+    void Player::handleEvent(const sf::Event& event, CommandQueue& cq)
     {
         // test event
         if (event.type == sf::Event::KeyPressed && event.key.code == sf::Keyboard::Enter) {
@@ -29,11 +29,11 @@ namespace BW {
             {
                 std::cout << "Pressed enter" << std::endl;
             };
-            cq->push(print); // add to command queue
+            cq.push(print); // add to command queue
         }
     }
 
-    void Player::handleRealtimeInput(CommandQueue* cq)
+    void Player::handleRealtimeInput(CommandQueue& cq)
     {
 
     }

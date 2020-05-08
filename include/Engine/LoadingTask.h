@@ -10,7 +10,7 @@ namespace BW {
     class LoadingTask
     {
         public:
-            LoadingTask(TextureManager* tm, FontManager* fm);
+            LoadingTask(TextureManager& tm, FontManager& fm);
             virtual ~LoadingTask();
 
             // execute the loading task
@@ -19,8 +19,8 @@ namespace BW {
 
         private:
             void load();
-            TextureManager *m_Textures;
-            FontManager *m_Fonts;
+            TextureManager& m_Textures;
+            FontManager& m_Fonts;
 
         private:
             bool m_Finished;

@@ -41,8 +41,8 @@ class MenuState : public GameState
         const sf::RenderWindow& m_Window;
 
         // Reference to state manager parent
-        StateManager *m_SM;
-        TextureManager *m_Textures;
+        StateManager* m_SM;
+        TextureManager& m_Textures;
 
         SceneNode m_SceneRoot;
 

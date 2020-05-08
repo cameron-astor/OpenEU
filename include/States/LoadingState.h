@@ -39,7 +39,6 @@ class LoadingState : public GameState
 
         // test background
         SpriteNode m_Background;
-        sf::Text m_LoadingText;
         TextNode m_Text;
 
 

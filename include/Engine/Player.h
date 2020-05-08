@@ -26,8 +26,8 @@ namespace BW {
             Player();
             virtual ~Player();
 
-            void handleEvent(const sf::Event& event, CommandQueue* cq);
-            void handleRealtimeInput(CommandQueue* cq);
+            void handleEvent(const sf::Event& event, CommandQueue& cq);
+            void handleRealtimeInput(CommandQueue& cq);
 
         private:
 

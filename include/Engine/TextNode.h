@@ -12,14 +12,15 @@ namespace BW {
     class TextNode : public SceneNode
     {
         public:
-            explicit TextNode(sf::Text& text);
+            explicit TextNode(sf::String text);
             virtual ~TextNode();
             void setPosition(float x, float y);
             void setText(sf::String text);
+            void setFont(std::shared_ptr<sf::Font> f);
 
         private:
             virtual void drawCurrent(sf::RenderTarget& target, sf::RenderStates states) const;
-            sf::Text *m_Text;
+            sf::Text m_Text;
 
     };
 

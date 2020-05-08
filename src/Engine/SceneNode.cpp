@@ -21,7 +21,7 @@ namespace BW {
     SceneNode::NodePtr SceneNode::detachChild(const SceneNode& node)
     {
         auto found = std::find_if(mChildren.begin(), mChildren.end(),
-                                  [&] (NodePtr& p) -> bool { return p.get() == &node; });
+                                  [&] (NodePtr& p) -> bool { return p == &node; });
 
         assert(found != mChildren.end());
 
