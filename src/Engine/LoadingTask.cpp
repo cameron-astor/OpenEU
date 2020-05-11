@@ -16,17 +16,14 @@ namespace BW {
 
     void LoadingTask::run()
     {
-        std::thread load ( [this] { this->load(); } );
-        load.join();
-        m_Finished = true;
+        m_Task = std::thread( [this] { this->load(); } );
     }
 
     void LoadingTask::load()
     {
-//        m_Textures.load("assets/gfx/textures/main_menu/frontend_backdrop.png");
-//        m_Textures.load("assets/gfx/textures/main_menu/menu_button.png");
         m_Textures.loadAll();
         m_Fonts.loadAll();
+        m_Finished = true;
     }
 
     bool LoadingTask::isFinished()
@@ -34,5 +31,9 @@ namespace BW {
         return m_Finished;
     }
 
+    void LoadingTask::joinThread()
+    {
+        m_Task.join();
+    }
 
 }

@@ -8,7 +8,8 @@ namespace BW {
         m_SceneRoot(),
         m_Background(sm->m_Textures.get("loading_screen.png")),
         m_Text("Loading"),
-        m_ld(sm->m_Textures, sm->m_Fonts)
+        m_ld(sm->m_Textures, sm->m_Fonts),
+        m_Countdown(2000)
     {
        buildScene();
        m_ld.run();
@@ -22,6 +23,7 @@ namespace BW {
     void LoadingState::update(sf::Time dt)
     {
         if (m_ld.isFinished()) {
+            m_ld.joinThread();
             sm->setState("Menu");
         }
     }

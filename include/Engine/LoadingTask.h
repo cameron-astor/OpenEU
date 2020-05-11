@@ -16,6 +16,7 @@ namespace BW {
             // execute the loading task
             void run();
             bool isFinished();
+            void joinThread();
 
         private:
             void load();
@@ -24,6 +25,7 @@ namespace BW {
 
         private:
             bool m_Finished;
+            std::thread m_Task;
 
     };
 
