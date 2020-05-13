@@ -421,7 +421,7 @@
 	<stddef.h>
 	<Engine/Game.h>
 
-1588914247 c:\users\camer\codeblocks\openeu\include\engine\game.h
+1589364150 c:\users\camer\codeblocks\openeu\include\engine\game.h
 	<map>
 	<memory>
 	<Engine/FpsCounter.h>
@@ -432,7 +432,7 @@
 	<States/MenuState.h>
 	<Engine/Player.h>
 
-1588920588 source:c:\users\camer\codeblocks\openeu\src\engine\game.cpp
+1589366077 source:c:\users\camer\codeblocks\openeu\src\engine\game.cpp
 	"Engine/Game.h"
 
 1585437154 c:\users\camer\codeblocks\openeu\include\engine\fpscounter.h
@@ -444,7 +444,7 @@
 1585349657 source:c:\users\camer\codeblocks\openeu\src\engine\gamestate.cpp
 	"Engine/GameState.h"
 
-1588416150 c:\users\camer\codeblocks\openeu\include\engine\gamestate.h
+1589363498 c:\users\camer\codeblocks\openeu\include\engine\gamestate.h
 	<SFML/Graphics.hpp>
 	<Engine/SceneNode.h>
 	<Engine/SpriteNode.h>
@@ -453,15 +453,15 @@
 	<memory>
 	<map>
 
-1588922157 source:c:\users\camer\codeblocks\openeu\src\states\menustate.cpp
+1589365891 source:c:\users\camer\codeblocks\openeu\src\states\menustate.cpp
 	"MenuState.h"
 	<Managers/StateManager.h>
 
-1588914247 c:\users\camer\codeblocks\openeu\include\states\menustate.h
+1589364301 c:\users\camer\codeblocks\openeu\include\states\menustate.h
 	<Engine/GameState.h>
 	<Entity/MenuButton.h>
 
-1588906603 source:c:\users\camer\codeblocks\openeu\src\states\mapstate.cpp
+1589365872 source:c:\users\camer\codeblocks\openeu\src\states\mapstate.cpp
 	"MapState.h"
 	<Managers/StateManager.h>
 
@@ -474,10 +474,10 @@
 1585351345 c:\users\camer\codeblocks\openeu\include\managers\manager.h
 	<SFML/Graphics.hpp>
 
-1588914247 source:c:\users\camer\codeblocks\openeu\src\managers\statemanager.cpp
+1589364125 source:c:\users\camer\codeblocks\openeu\src\managers\statemanager.cpp
 	"StateManager.h"
 
-1588914247 c:\users\camer\codeblocks\openeu\include\managers\statemanager.h
+1589364111 c:\users\camer\codeblocks\openeu\include\managers\statemanager.h
 	<SFML/Graphics.hpp>
 	<Engine/GameState.h>
 	<States/MenuState.h>
@@ -516,7 +516,7 @@
 	<cassert>
 	<Engine/Command.h>
 
-1588914247 c:\users\camer\codeblocks\openeu\include\states\mapstate.h
+1589365872 c:\users\camer\codeblocks\openeu\include\states\mapstate.h
 	<Engine/GameState.h>
 	<Managers/TextureManager.h>
 
@@ -527,11 +527,13 @@
 	<Engine/SceneNode.h>
 	<Managers/TextureManager.h>
 
-1588922280 source:c:\users\camer\codeblocks\openeu\src\entity\menubutton.cpp
+1589366092 source:c:\users\camer\codeblocks\openeu\src\entity\menubutton.cpp
 	"MenuButton.h"
 
-1588914247 c:\users\camer\codeblocks\openeu\include\entity\menubutton.h
+1589365803 c:\users\camer\codeblocks\openeu\include\entity\menubutton.h
 	<Engine/Entity.h>
+	<AssetWarehouse.h>
+	<SFML/Graphics.hpp>
 
 1588914247 source:c:\users\camer\codeblocks\openeu\src\engine\spritenode.cpp
 	"SpriteNode.h"
@@ -539,11 +541,11 @@
 1588914247 c:\users\camer\codeblocks\openeu\include\engine\spritenode.h
 	<Engine/SceneNode.h>
 
-1588923523 source:c:\users\camer\codeblocks\openeu\src\states\loadingstate.cpp
+1589365830 source:c:\users\camer\codeblocks\openeu\src\states\loadingstate.cpp
 	"LoadingState.h"
 	<Managers/StateManager.h>
 
-1588923117 c:\users\camer\codeblocks\openeu\include\states\loadingstate.h
+1589363699 c:\users\camer\codeblocks\openeu\include\states\loadingstate.h
 	<Engine/GameState.h>
 	<Engine/LoadingTask.h>
 	<Managers/AssetManager.h>
@@ -576,13 +578,13 @@
 	<Engine/Command.h>
 	<queue>
 
-1588579482 c:\users\camer\codeblocks\openeu\include\engine\command.h
+1589185790 c:\users\camer\codeblocks\openeu\include\engine\command.h
 	<SFML/System/Time.hpp>
 	<functional>
 
 1588417114 c:\users\camer\codeblocks\openeu\include\engine\category.h
 
-1588914247 source:c:\users\camer\codeblocks\openeu\src\engine\player.cpp
+1589363145 source:c:\users\camer\codeblocks\openeu\src\engine\player.cpp
 	"Player.h"
 
 1588914247 c:\users\camer\codeblocks\openeu\include\engine\player.h
@@ -591,18 +593,17 @@
 	<map>
 	<iostream>
 
-1589181281 c:\users\camer\codeblocks\openeu\include\engine\loadingtask.h
+1589365703 c:\users\camer\codeblocks\openeu\include\engine\loadingtask.h
 	<thread>
-	<Managers/TextureManager.h>
-	<Managers/FontManager.h>
+	<Managers/AssetWarehouse.h>
 
-1589181174 source:c:\users\camer\codeblocks\openeu\src\engine\loadingtask.cpp
+1589365715 source:c:\users\camer\codeblocks\openeu\src\engine\loadingtask.cpp
 	"LoadingTask.h"
 
-1588659893 source:c:\users\camer\codeblocks\openeu\src\managers\assetwarehouse.cpp
+1589363996 source:c:\users\camer\codeblocks\openeu\src\managers\assetwarehouse.cpp
 	"AssetWarehouse.h"
 
-1588659893 c:\users\camer\codeblocks\openeu\include\managers\assetwarehouse.h
+1589363943 c:\users\camer\codeblocks\openeu\include\managers\assetwarehouse.h
 	<Managers/TextureManager.h>
 	<Managers/FontManager.h>
 

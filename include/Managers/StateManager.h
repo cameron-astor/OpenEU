@@ -26,7 +26,7 @@ class StateManager
 {
     public:
 
-        StateManager(const sf::RenderWindow& window, TextureManager& tptr, FontManager& fptr, CommandQueue& cq);
+        StateManager(const sf::RenderWindow& window, AssetWarehouse& assets, CommandQueue& cq);
         virtual ~StateManager();
 
         /* Returns a pointer to the
@@ -39,10 +39,11 @@ class StateManager
 
     public:
         // References to resource managers
-        TextureManager& m_Textures;
-        FontManager& m_Fonts;
+        // TextureManager& m_Textures;
+        // FontManager& m_Fonts;
         // Audio
         // etc
+        AssetWarehouse& m_Assets;
 
         // Reference to command queue
         CommandQueue& m_CQueue;

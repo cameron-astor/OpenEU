@@ -2,8 +2,8 @@
 
 namespace BW {
 
-    StateManager::StateManager(const sf::RenderWindow& window, TextureManager& tptr, FontManager& fptr, CommandQueue& cq):
-        m_Textures(tptr), m_Fonts(fptr), m_CQueue(cq),
+    StateManager::StateManager(const sf::RenderWindow& window, AssetWarehouse& assets, CommandQueue& cq):
+        m_Assets(assets), m_CQueue(cq),
         m_Window(&window)
     {
         currentState = new DefaultState;

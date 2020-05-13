@@ -2,8 +2,8 @@
 
 namespace BW {
 
-    LoadingTask::LoadingTask(TextureManager& tm, FontManager& fm):
-        m_Textures(tm), m_Fonts(fm),
+    LoadingTask::LoadingTask(AssetWarehouse& assets):
+        m_Assets(assets),
         m_Finished(false)
     {
         //ctor
@@ -21,8 +21,8 @@ namespace BW {
 
     void LoadingTask::load()
     {
-        m_Textures.loadAll();
-        m_Fonts.loadAll();
+        m_Assets.loadAllTextures();
+        m_Assets.loadAllFonts();
         m_Finished = true;
     }
 

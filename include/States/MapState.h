@@ -25,7 +25,6 @@ class MapState : public GameState
     private:
         // Reference to state manager parent
         StateManager *m_SM;
-        TextureManager &m_Textures;
 
 };
 

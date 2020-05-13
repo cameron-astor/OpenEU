@@ -22,9 +22,10 @@ namespace BW {
     {
         std::function<void(SceneNode&, sf::Time)> action;
         unsigned int                              category;
+        bool                                      scene_global;
 
         // Constructor. Category defaults to none.
-        Command():action(), category(Category::None)
+        Command():action(), category(Category::None), scene_global(false)
         {
 
         }

@@ -44,9 +44,6 @@ class LoadingState : public GameState
         // loading task (parallel thread)
         LoadingTask m_ld;
 
-        // to prevent graphical artifacting on the loading screen, delay the loading task for a couple thousand frames
-        unsigned int m_Countdown;
-
 
 };
 

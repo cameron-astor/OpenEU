@@ -5,9 +5,10 @@ namespace BW {
     Game::Game():DEFAULT_TITLE("Brainwerk Engine"), // title of window (in absence of definition)
                      m_Window(sf::VideoMode(DEFAULT_VIDEO_WIDTH, DEFAULT_VIDEO_HEIGHT, DEFAULT_VIDEO_BPP), DEFAULT_TITLE), rs(), m_isInFocus(true),
                      counter(), timePerUpdateTick(sf::seconds(1.f/60.f)), // 60hz
-                     m_Textures(), m_Fonts(), // initialize asset managers
+                     // m_Textures(), m_Fonts(), // initialize asset managers
+                     m_Assets(),
                      m_CQueue(), // initialize command queue
-                     m_States(m_Window, m_Textures, m_Fonts, m_CQueue), // state manager reference (to be assigned in initialization)
+                     m_States(m_Window, m_Assets, m_CQueue), // state manager reference (to be assigned in initialization)
                      m_Player()
     {
         m_Window.setFramerateLimit(FRAMERATE_LIMIT); // Limit rendering fps
@@ -99,8 +100,9 @@ namespace BW {
     void Game::loadFirstResources()
     {
         /* Loading screen resources*/
-        m_Textures.load("assets/init_resources/loading_screen.png");
-        m_Fonts.load("assets/init_resources/arial.ttf");
+        m_Assets.loadTexture("assets/init_resources/loading_screen.png");
+        m_Assets.loadFont("assets/init_resources/Px437_IBM_BIOS.ttf");
+        m_Assets.loadFont("assets/init_resources/arial.ttf");
     }
 
 
