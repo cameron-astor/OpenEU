@@ -6,9 +6,9 @@ namespace BW {
     LoadingState::LoadingState(const sf::RenderWindow& window, StateManager *sm):
         sm(sm),
         m_SceneRoot(),
-        m_Background(sm->m_Textures.get("assets/gfx/textures/loadingscreens/loading_screen.png")),
+        m_Background(sm->m_Assets.getTexture("loading_screen.png")),
         m_Text("Loading"),
-        m_ld(sm->m_Textures, sm->m_Fonts)
+        m_ld(sm->m_Assets)
     {
        buildScene();
        m_ld.run();
@@ -22,6 +22,7 @@ namespace BW {
     void LoadingState::update(sf::Time dt)
     {
         if (m_ld.isFinished()) {
+            m_ld.joinThread();
             sm->setState("Menu");
         }
     }
@@ -29,7 +30,7 @@ namespace BW {
     void LoadingState::buildScene()
     {
         // TODO: improve state manager api so that this call just has to be "sm->getFont( ... ):"
-        m_Text.setFont(sm->m_Fonts.get("assets/gfx/fonts/arial.ttf"));
+        m_Text.setFont(sm->m_Assets.getFont("arial.ttf"));
         m_Text.setPosition(500.f, 600.f);
 
         m_SceneRoot.attachChild(&m_Background);

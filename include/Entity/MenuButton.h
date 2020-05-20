@@ -2,13 +2,15 @@
 #define MENUBUTTON_H
 
 #include <Engine/Entity.h>
+#include <AssetWarehouse.h>
+#include <SFML/Graphics.hpp>
 
 namespace BW {
 
     class MenuButton : public Entity
     {
         public:
-            explicit MenuButton(sf::String text, const TextureManager& textures);
+            explicit MenuButton(sf::String text, AssetWarehouse& assets);
             virtual ~MenuButton();
             virtual void drawCurrent(sf::RenderTarget& target, sf::RenderStates states) const;
 

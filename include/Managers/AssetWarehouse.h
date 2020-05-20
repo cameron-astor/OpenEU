@@ -15,9 +15,14 @@ namespace BW {
             AssetWarehouse();
             virtual ~AssetWarehouse();
 
+            // Textures
+            void loadTexture(std::string filename);
             void loadAllTextures();
-            void loadAllFonts();
             std::shared_ptr<sf::Texture> getTexture(std::string filename);
+
+            // Fonts
+            void loadFont(std::string filename);
+            void loadAllFonts();
             std::shared_ptr<sf::Font> getFont(std::string filename);
 
         private:

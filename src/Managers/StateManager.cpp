@@ -2,11 +2,12 @@
 
 namespace BW {
 
-    StateManager::StateManager(const sf::RenderWindow& window, TextureManager& tptr, FontManager& fptr, CommandQueue& cq):
-        m_Textures(tptr), m_Fonts(fptr), m_CQueue(cq),
+    StateManager::StateManager(const sf::RenderWindow& window, AssetWarehouse& assets, CommandQueue& cq):
+        m_Assets(assets), m_CQueue(cq),
         m_Window(&window)
     {
-        currentState = new DefaultState;
+        m_CurrentState = new DefaultState;
+        m_CurrentStateName = "Default";
     }
 
     StateManager::~StateManager()
@@ -16,20 +17,27 @@ namespace BW {
 
     GameState* StateManager::getCurrentState()
     {
-        return currentState;
+        return m_CurrentState;
     }
 
     void StateManager::setState(sf::String state)
     {
-        delete currentState;
+        delete m_CurrentState;
         if (state == "Default")
-            currentState = new DefaultState;
+            m_CurrentState = new DefaultState;
         else if (state == "Loading")
-            currentState = new LoadingState(*m_Window, this);
+            m_CurrentState = new LoadingState(*m_Window, this);
         else if (state == "Menu")
-            currentState = new MenuState(*m_Window, this);
+            m_CurrentState = new MenuState(*m_Window, this);
         else if (state == "Map")
-            currentState = new MapState(*m_Window, this);
+            m_CurrentState = new MapState(*m_Window, this);
+        m_CurrentStateName = state;
     }
+
+    sf::String StateManager::getCurrentStateName()
+    {
+        return m_CurrentStateName;
+    }
+
 
 }

@@ -4,8 +4,7 @@
 namespace BW {
 
     MapState::MapState(const sf::RenderWindow& window, StateManager *sm):
-        m_SM(sm),
-        m_Textures(sm->m_Textures)
+        m_SM(sm)
     {
         //ctor
     }

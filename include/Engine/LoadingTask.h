@@ -2,28 +2,28 @@
 #define LOADINGTASK_H
 
 #include <thread>
-#include <Managers/TextureManager.h>
-#include <Managers/FontManager.h>
+#include <Managers/AssetWarehouse.h>
 
 namespace BW {
 
     class LoadingTask
     {
         public:
-            LoadingTask(TextureManager& tm, FontManager& fm);
+            LoadingTask(AssetWarehouse& assets);
             virtual ~LoadingTask();
 
             // execute the loading task
             void run();
             bool isFinished();
+            void joinThread();
 
         private:
             void load();
-            TextureManager& m_Textures;
-            FontManager& m_Fonts;
+            AssetWarehouse& m_Assets;
 
         private:
             bool m_Finished;
+            std::thread m_Task;
 
     };
 

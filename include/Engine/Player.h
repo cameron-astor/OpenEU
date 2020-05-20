@@ -4,6 +4,7 @@
 #include <SFML/Window/Event.hpp>
 #include <Engine/CommandQueue.h>
 #include <map>
+#include <Managers/StateManager.h>
 
 // debug
 #include <iostream>
@@ -23,7 +24,7 @@ namespace BW {
             };
 
         public:
-            Player();
+            Player(StateManager& sm);
             virtual ~Player();
 
             void handleEvent(const sf::Event& event, CommandQueue& cq);
@@ -36,6 +37,9 @@ namespace BW {
 
             // Maps an abstract action to a concrete command to be sent to the command queue
             std::map<Action, Command> m_ActionBinding;
+
+            StateManager& m_StateManager;
+
     };
 
 }

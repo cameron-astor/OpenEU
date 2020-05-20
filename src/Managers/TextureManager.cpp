@@ -11,11 +11,12 @@ namespace BW {
         std::shared_ptr<sf::Texture> ptr(new sf::Texture());
         if (!ptr->loadFromFile(filename)) // load texture from file
         {
-            throw std::invalid_argument("file not found");
             return false;
         }
 
-        m_TextureMap[filename] = ptr; // insert into map
+        std::filesystem::path p(filename);
+        std::string newFilename = p.filename().string();
+        m_TextureMap[newFilename] = ptr; // insert into map
 
         std::cout << "Loaded: " << filename << std::endl; // debug
 
@@ -24,8 +25,14 @@ namespace BW {
 
     bool TextureManager::loadAll()
     {
-        throw std::invalid_argument("not yet implemented");
-        return false;
+        std::filesystem::path p("assets/gfx/textures");
+        for (const auto& dirEntry : std::filesystem::recursive_directory_iterator(p)) {
+            if (!std::filesystem::is_directory(dirEntry)) {
+                auto filename = dirEntry.path().filename();
+                this->load(dirEntry.path().string());
+            }
+        }
+        return true;
     }
 
     std::shared_ptr<sf::Texture> TextureManager::get(std::string filename) const

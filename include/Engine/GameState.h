@@ -30,6 +30,8 @@ class GameState : public sf::Drawable, private sf::NonCopyable
         /* Set up the scene graph */
         virtual void buildScene() = 0;
 
+        //StateManager* m_SM;
+
 };
 
 }

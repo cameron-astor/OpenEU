@@ -82,10 +82,7 @@ class Game
 
 
         /* MANAGERS */
-
-        /* Asset managers */
-        TextureManager m_Textures;
-        FontManager m_Fonts;
+        AssetWarehouse m_Assets;
 
         /* COMMAND QUEUE */
         CommandQueue m_CQueue;

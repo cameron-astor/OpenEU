@@ -42,7 +42,6 @@ class MenuState : public GameState
 
         // Reference to state manager parent
         StateManager* m_SM;
-        TextureManager& m_Textures;
 
         SceneNode m_SceneRoot;
 

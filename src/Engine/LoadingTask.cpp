@@ -2,8 +2,8 @@
 
 namespace BW {
 
-    LoadingTask::LoadingTask(TextureManager& tm, FontManager& fm):
-        m_Textures(tm), m_Fonts(fm),
+    LoadingTask::LoadingTask(AssetWarehouse& assets):
+        m_Assets(assets),
         m_Finished(false)
     {
         //ctor
@@ -16,16 +16,14 @@ namespace BW {
 
     void LoadingTask::run()
     {
-        std::thread load ( [this] { this->load(); } );
-        load.join();
-        m_Finished = true;
+        m_Task = std::thread( [this] { this->load(); } );
     }
 
     void LoadingTask::load()
     {
-        m_Textures.load("assets/gfx/textures/main_menu/frontend_backdrop.png");
-        m_Textures.load("assets/gfx/textures/main_menu/menu_button.png");
-        m_Fonts.load("assets/gfx/fonts/Px437_IBM_BIOS.ttf");
+        m_Assets.loadAllTextures();
+        m_Assets.loadAllFonts();
+        m_Finished = true;
     }
 
     bool LoadingTask::isFinished()
@@ -33,5 +31,9 @@ namespace BW {
         return m_Finished;
     }
 
+    void LoadingTask::joinThread()
+    {
+        m_Task.join();
+    }
 
 }

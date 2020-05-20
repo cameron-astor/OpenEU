@@ -2,7 +2,8 @@
 
 namespace BW {
 
-    Player::Player()
+    Player::Player(StateManager& sm):
+        m_StateManager(sm)
     {
         // Set default keybinds
         m_KeyBinding[sf::Keyboard::Key::S] = ScrollRight;
@@ -30,6 +31,12 @@ namespace BW {
                 std::cout << "Pressed enter" << std::endl;
             };
             cq.push(print); // add to command queue
+        }
+
+        // test scene event
+        if (event.type == sf::Event::KeyPressed && event.key.code == sf::Keyboard::A) {
+            if (m_StateManager.getCurrentStateName() == "Menu")
+                m_StateManager.setState("Map");
         }
     }
 

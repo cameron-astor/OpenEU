@@ -6,7 +6,7 @@ namespace BW {
     : startTime(sf::Time::Zero), endTime(sf::Time::Zero),
         frameTime(sf::Time::Zero), clock(), frames(0), text(), font()
     {
-        if (font.loadFromFile("assets/gfx/fonts/Px437_IBM_BIOS.ttf")) {
+        if (font.loadFromFile("assets/init_resources/Px437_IBM_BIOS.ttf")) {
             text.setFont(font);
             text.setCharacterSize(8);
             text.setStyle(sf::Text::Regular);

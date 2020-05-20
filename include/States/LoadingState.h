@@ -41,7 +41,6 @@ class LoadingState : public GameState
         SpriteNode m_Background;
         TextNode m_Text;
 
-
         // loading task (parallel thread)
         LoadingTask m_ld;
 
