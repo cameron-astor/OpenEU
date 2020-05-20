@@ -18,8 +18,7 @@ namespace BW {
 */
 
 /* TODO
-    - Perhaps replace bloated constructor parameters with set() functions (nvm gonna make asset warehouse)
-    - Replace string state assignment with an enum of possible states
+        // convert window pointer to reference
 */
 
 class StateManager
@@ -37,12 +36,13 @@ class StateManager
            the requested state. Deletes the previous state. */
         void setState(sf::String state);
 
+        /* Returns the name of the currently active state
+           as an sf::String */
+        sf::String getCurrentStateName();
+
     public:
-        // References to resource managers
-        // TextureManager& m_Textures;
-        // FontManager& m_Fonts;
-        // Audio
-        // etc
+
+        // Reference to asset managers
         AssetWarehouse& m_Assets;
 
         // Reference to command queue
@@ -50,11 +50,13 @@ class StateManager
 
     private:
         // Pointer to the current game state
-        GameState *currentState;
+        GameState *m_CurrentState;
+
+        // Name of current state
+        sf::String m_CurrentStateName;
 
         // Reference to the render window
 
-        // TODO convert to reference
         const sf::RenderWindow *m_Window;
 
 };

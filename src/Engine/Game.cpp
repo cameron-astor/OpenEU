@@ -9,7 +9,7 @@ namespace BW {
                      m_Assets(),
                      m_CQueue(), // initialize command queue
                      m_States(m_Window, m_Assets, m_CQueue), // state manager reference (to be assigned in initialization)
-                     m_Player()
+                     m_Player(m_States)
     {
         m_Window.setFramerateLimit(FRAMERATE_LIMIT); // Limit rendering fps
         m_Window.setKeyRepeatEnabled(false);

@@ -432,7 +432,7 @@
 	<States/MenuState.h>
 	<Engine/Player.h>
 
-1589366077 source:c:\users\camer\codeblocks\openeu\src\engine\game.cpp
+1589961177 source:c:\users\camer\codeblocks\openeu\src\engine\game.cpp
 	"Engine/Game.h"
 
 1585437154 c:\users\camer\codeblocks\openeu\include\engine\fpscounter.h
@@ -474,10 +474,10 @@
 1585351345 c:\users\camer\codeblocks\openeu\include\managers\manager.h
 	<SFML/Graphics.hpp>
 
-1589364125 source:c:\users\camer\codeblocks\openeu\src\managers\statemanager.cpp
+1589961308 source:c:\users\camer\codeblocks\openeu\src\managers\statemanager.cpp
 	"StateManager.h"
 
-1589364111 c:\users\camer\codeblocks\openeu\include\managers\statemanager.h
+1589961398 c:\users\camer\codeblocks\openeu\include\managers\statemanager.h
 	<SFML/Graphics.hpp>
 	<Engine/GameState.h>
 	<States/MenuState.h>
@@ -584,13 +584,14 @@
 
 1588417114 c:\users\camer\codeblocks\openeu\include\engine\category.h
 
-1589363145 source:c:\users\camer\codeblocks\openeu\src\engine\player.cpp
+1589961298 source:c:\users\camer\codeblocks\openeu\src\engine\player.cpp
 	"Player.h"
 
-1588914247 c:\users\camer\codeblocks\openeu\include\engine\player.h
+1589961150 c:\users\camer\codeblocks\openeu\include\engine\player.h
 	<SFML/Window/Event.hpp>
 	<Engine/CommandQueue.h>
 	<map>
+	<Managers/StateManager.h>
 	<iostream>
 
 1589365703 c:\users\camer\codeblocks\openeu\include\engine\loadingtask.h
