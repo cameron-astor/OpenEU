@@ -38,6 +38,9 @@ namespace BW {
             // Maps an abstract action to a concrete command to be sent to the command queue
             std::map<Action, Command> m_ActionBinding;
 
+            // Mouse coordinates
+            sf::Vector2i m_MouseCoords;
+
             StateManager& m_StateManager;
 
     };

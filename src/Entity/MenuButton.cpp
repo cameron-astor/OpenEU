@@ -2,23 +2,23 @@
 
 namespace BW {
 
-    MenuButton::MenuButton(sf::String text, sf::Font font, sf::Texture texture):
-        m_Font(), m_Text()
+    MenuButton::MenuButton(sf::String text, AssetWarehouse& assets):
+        m_Font(), m_Text(), m_Assets(assets)
     {
-        m_Text.setFont(font);
+        m_Text.setFont(*m_Assets.getFont("arial.ttf"));
         m_Text.setCharacterSize(8);
         m_Text.setColor(sf::Color::Black);
         m_Text.setStyle(sf::Text::Regular);
         m_Text.setString(text);
         m_Text.setPosition(0.f, 0.f);
 
-        m_Sprite.setTexture(texture); // setup sprite
+        m_Sprite.setTexture(*m_Assets.getTexture("menu_button.png")); // setup sprite
 
         // Align sprite transform axis to center (make this operation available to all entities at some point)
-        sf::FloatRect bounds = m_Sprite.getLocalBounds();
+        sf::FloatRect bounds = m_Sprite.getGlobalBounds();
         m_Sprite.setOrigin(bounds.width / 2.f, bounds.height / 2.f);
         // likewise for text
-        sf::FloatRect tbounds = m_Text.getLocalBounds();
+        sf::FloatRect tbounds = m_Text.getGlobalBounds();
         m_Text.setOrigin(tbounds.width / 2.f, tbounds.height / 2.f);
 
     }
@@ -33,5 +33,16 @@ namespace BW {
         target.draw(m_Sprite, states);
         target.draw(m_Text, states);
     }
+
+    void MenuButton::activateHover()
+    {
+        m_Sprite.setTexture(*m_Assets.getTexture("menu_button_hover.png"));
+    }
+
+    void MenuButton::deactivateHover()
+    {
+        m_Sprite.setTexture(*m_Assets.getTexture("menu_button.png"));
+    }
+
 
 }

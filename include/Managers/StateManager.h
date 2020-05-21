@@ -48,16 +48,16 @@ class StateManager
         // Reference to command queue
         CommandQueue& m_CQueue;
 
+        // Reference to the render window
+        const sf::RenderWindow *m_Window;
+
+
     private:
         // Pointer to the current game state
         GameState *m_CurrentState;
 
         // Name of current state
         sf::String m_CurrentStateName;
-
-        // Reference to the render window
-
-        const sf::RenderWindow *m_Window;
 
 };
 
