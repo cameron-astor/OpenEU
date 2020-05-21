@@ -10,7 +10,7 @@ namespace BW {
     class MenuButton : public Entity
     {
         public:
-            explicit MenuButton(sf::String text, AssetWarehouse& assets);
+            explicit MenuButton(sf::String text, sf::Font font, sf::Texture texture);
             virtual ~MenuButton();
             virtual void drawCurrent(sf::RenderTarget& target, sf::RenderStates states) const;
 

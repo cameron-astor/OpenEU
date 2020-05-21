@@ -29,7 +29,6 @@ namespace BW {
 
     void LoadingState::buildScene()
     {
-        // TODO: improve state manager api so that this call just has to be "sm->getFont( ... ):"
         m_Text.setFont(sm->m_Assets.getFont("arial.ttf"));
         m_Text.setPosition(500.f, 600.f);
 

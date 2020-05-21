@@ -34,7 +34,7 @@ namespace BW {
         }
 
         // test scene event
-        if (event.type == sf::Event::KeyPressed && event.key.code == sf::Keyboard::A) {
+        if (event.type == sf::Event::KeyPressed && event.key.code == sf::Keyboard::Enter) {
             if (m_StateManager.getCurrentStateName() == "Menu")
                 m_StateManager.setState("Map");
         }

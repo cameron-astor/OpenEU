@@ -47,9 +47,9 @@ class MenuState : public GameState
 
         // Scene objects
         SpriteNode m_Background; // background sprite
-        MenuButton m_SinglePlayer; // single player button
-        MenuButton m_Options; // options button
-        MenuButton m_Fuck;
+//        MenuButton m_SinglePlayer; // single player button
+//        MenuButton m_Options; // options button
+//        MenuButton m_Fuck;
 
 };
 
